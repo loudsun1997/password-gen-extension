@@ -56,10 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (result.customSpecialChars !== undefined) {
       customSpecialCharsInput.value = result.customSpecialChars;
     } else {
-      customSpecialCharsInput.value = '';
+      customSpecialCharsInput.value = defaultSpecialChars;
     }
     // Show/hide custom special chars input on load
     specialCharsCustomContainer.style.display = specialEl.checked ? 'block' : 'none';
+    // If Special is checked and input is empty, pre-fill with default
+    if (specialEl.checked && !customSpecialCharsInput.value) {
+      customSpecialCharsInput.value = defaultSpecialChars;
+    }
 
     if (result.advancedVisible) {
       advancedOptionsContainerEl.style.display = 'block';
@@ -95,6 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Show/hide custom special chars input when Special is toggled
   specialEl.addEventListener('change', () => {
     specialCharsCustomContainer.style.display = specialEl.checked ? 'block' : 'none';
+    // If enabling Special and input is empty, pre-fill with default
+    if (specialEl.checked && !customSpecialCharsInput.value) {
+      customSpecialCharsInput.value = defaultSpecialChars;
+    }
     savePreferences();
   });
 
