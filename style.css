@@ -1,0 +1,123 @@
+body {
+  font-family: sans-serif;
+  width: 320px; /* Increased width to accommodate grid */
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+.container {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 10px; /* Space between grid items */
+  margin-bottom: 15px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center; /* Vertically align checkbox and label */
+}
+
+.option-item input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.option-item label {
+  font-size: 14px;
+  color: #555;
+}
+
+.length-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.length-option input[type="number"] {
+  width: 50px;
+  margin-right: 8px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.length-option label {
+  margin-right: auto; /* Pushes toggle link to the right */
+  font-size: 14px;
+  color: #555;
+}
+
+#toggle-options {
+  font-size: 12px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+#toggle-options:hover {
+  text-decoration: underline;
+}
+
+.generated-password-container {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+#generated-password {
+  flex-grow: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-right: 5px; /* Space between input and copy button */
+  background-color: #e9ecef; /* Slightly different background for readonly */
+}
+
+#copy-password {
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #6c757d; /* Bootstrap secondary color */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#copy-password:hover {
+  background-color: #5a6268;
+}
+
+button#generate {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px; /* Add some space above the button */
+}
+
+button#generate:hover {
+  background-color: #0056b3;
+}
+
+.advanced-options {
+    /* Styles for the advanced options container, initially hidden via inline style in HTML */
+    margin-top: 10px; /* Add some space when visible */
+} 

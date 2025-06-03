@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Password Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Random password generator</h2>
+
+    <div class="options-grid">
+      <div class="option-item">
+        <input type="checkbox" id="numbers" name="numbers" checked>
+        <label for="numbers">Numbers</label>
+      </div>
+      <div class="option-item">
+        <input type="checkbox" id="lowercases" name="lowercases" checked>
+        <label for="lowercases">Lowercases</label>
+      </div>
+      <div class="option-item">
+        <input type="checkbox" id="uppercases" name="uppercases" checked>
+        <label for="uppercases">Uppercases</label>
+      </div>
+      <div class="option-item">
+        <input type="checkbox" id="special" name="special">
+        <label for="special">Special</label>
+      </div>
+    </div>
+
+    <div id="special-chars-custom-container" style="display: none; margin-bottom: 10px; margin-top: -5px;">
+      <div style="display: flex; align-items: center; margin-bottom: 5px;">
+        <label for="custom-special-chars" style="font-size: 13px; margin-right: 5px;">Use chars:</label>
+        <input type="text" id="custom-special-chars" name="custom-special-chars" style="flex-grow: 1; font-size: 12px; padding: 4px;">
+      </div>
+      <button id="default-special-chars" style="font-size: 11px; padding: 3px 6px; margin-left: 5px; cursor: pointer;">Use Default Set</button>
+    </div>
+
+    <div class="length-option">
+      <input type="number" id="length" name="length" value="8" min="4" max="128">
+      <label for="length">length</label>
+      <a href="#" id="toggle-options">Hide options</a>
+    </div>
+
+    <div class="advanced-options" id="advanced-options-container" style="display: none;">
+      <div class="options-grid">
+        <div class="option-item">
+          <input type="checkbox" id="exclude" name="exclude">
+          <label for="exclude">Exclude</label>
+        </div>
+        <div id="exclude-chars-container" class="option-item" style="display: none; grid-column: span 2;">
+          <label for="exclude-chars-input" style="margin-right: 5px;">Chars:</label>
+          <input type="text" id="exclude-chars-input" name="exclude-chars-input" style="flex-grow: 1; font-size: 12px; padding: 3px;">
+        </div>
+        <div class="option-item">
+          <input type="checkbox" id="cryptography" name="cryptography">
+          <label for="cryptography">Cryptography</label>
+        </div>
+         <div class="option-item">
+          <input type="checkbox" id="history" name="history">
+          <label for="history">History</label>
+        </div>
+      </div>
+    </div>
+
+    <div id="history-container" style="display: none; margin-top: 15px;">
+      <h4>Password History:</h4>
+      <p id="history-warning" style="font-size: 11px; color: #777; margin-top: -10px; margin-bottom: 10px;">Passwords in history are stored locally on this computer.</p>
+      <ul id="password-history-list" style="list-style-type: none; padding-left: 0; max-height: 100px; overflow-y: auto; background: #f9f9f9; border: 1px solid #eee; border-radius: 3px; padding: 5px;">
+        <!-- History items will be populated here by JS -->
+      </ul>
+      <button id="clear-history" style="font-size: 12px; padding: 3px 8px; margin-top: 5px;">Clear History</button>
+    </div>
+
+    <div class="generated-password-container">
+      <input type="text" id="generated-password" readonly placeholder="Click Generate">
+      <button id="copy-password">Copy</button>
+    </div>
+
+    <button id="generate">GENERATE</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 

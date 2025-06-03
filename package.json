@@ -1,0 +1,19 @@
+{
+  "name": "password-gen-extension",
+  "version": "1.0.0",
+  "description": "A random password generator Chrome extension.",
+  "main": "popup.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "chrome-extension",
+    "password-generator"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0"
+  }
+} 
